@@ -1,8 +1,11 @@
-package solution
+package main
 
 // you can also use imports, for example:
 // import "fmt"
-import "sort"
+import (
+	"fmt"
+	"sort"
+)
 
 // you can write to stdout for debugging purposes, e.g.
 // fmt.Println("this is a debug message")
@@ -17,10 +20,8 @@ func isInArr(A []int, value int, current int) bool {
 func Solution(A []int) int {
 	min := 1
 	sort.Sort(sort.IntSlice(A))
-	for _, item := range A {
-		if item < min && item > 1 {
-			min = item
-		}
+	if A[0] > 1 {
+		min = A[0]
 	}
 	current := 0
 	for {
@@ -31,4 +32,11 @@ func Solution(A []int) int {
 			return min
 		}
 	}
+}
+
+func main() {
+	arr := []int{-1, -3, -2} //1
+	fmt.Println(Solution(arr))
+	arr2 := []int{1, 3, 6, 4, 1, 2}
+	fmt.Println(Solution(arr2)) //5
 }

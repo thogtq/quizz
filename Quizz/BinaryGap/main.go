@@ -6,23 +6,22 @@ import (
 )
 
 func main() {
-	test := fmt.Sprintf("%b", 1376796946)
-	fmt.Println(test)
-	testArr := strings.Split(test, "1")
-	fmt.Println(len(testArr))
-	fmt.Print(findMaxGap(testArr))
+
+	fmt.Print(Solution(295937))
+	// 100100001000000000 gap = 4
+	// [ 00 0000 000000000]
 }
 
 func findMaxGap(arr []string) int {
 	max := 0
 	for i, item := range arr {
+		fmt.Println(item)
 		if len(item) > max {
 			if i == len(arr)-1 {
 				continue
 			}
 			max = len(item)
 		}
-		fmt.Println("item", item)
 	}
 	return max
 }

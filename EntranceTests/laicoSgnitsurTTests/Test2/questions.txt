@@ -1,0 +1,16 @@
+Giả lập thuật toán round-robin load-balancing
+Có 3 server 1,2,3
+Và mảng các request n phần tử thứ tự tương ứng với index của mảng, giá trị phần tử mảng là thời gian request được thực gửi đến server
+Và mảng các thời gian thực thi của request m phần tử (m=n), tương ứng với request n[0] có thời gian thực thi m[o]
+Điều hướng request đến server theo thứ tự thời gian
+Viết chương trình xuất ra mảng thứ tự các server được sử dụng (ưu tiên từ nhỏ đến lớn)
+
+Ví dụ
+n=[4,2,5]
+m=[1,3,6]
+
+Output:
+[]
+
+request index = 1 có thời gian đến sớm nhất nên sẽ thực thi nó
+thời gian thực thi xong = 2 + m[1] = 2 + 3 = 5 (giây thứ 5 sẽ thực thi xong)
